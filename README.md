@@ -13,9 +13,10 @@ The system is designed not only for technical implementation, but also for real-
 In a restaurant where I worked part-time, daily sales were manually transcribed from paper reports into Excel.
 
 This caused:
-- Time-consuming work
-- Human errors
-- Complex management of multiple payment methods
+
+- Time-consuming work  
+- Human errors  
+- Complex management of multiple payment methods  
 
 To address these issues, I developed an OCR-based automation system.
 
@@ -49,14 +50,14 @@ This design improves reliability and reduces input errors in real-world operatio
 ---
 
 ## Tech Stack
-- Python
-- Flask
-- Requests
-- Tesseract OCR
-- Pillow
-- OpenCV
-- openpyxl
-- LINE Messaging API
+- Python  
+- Flask  
+- Requests  
+- Tesseract OCR  
+- Pillow  
+- OpenCV  
+- openpyxl  
+- LINE Messaging API  
 
 ---
 
@@ -65,33 +66,31 @@ This design improves reliability and reduces input errors in real-world operatio
 The project is organized as follows:
 
 - README.md  
-  Project overview and documentation
+  Project overview and documentation  
 
 - requirements.txt  
-  List of required Python libraries
+  List of required Python libraries  
 
 - src/ocr.py  
-  Handles image preprocessing and OCR execution
+  Handles image preprocessing and OCR execution  
 
 - src/parser.py  
-  Extracts structured data from OCR results
+  Extracts structured data from OCR results  
 
 - src/excel_writer.py  
-  Writes processed data into Excel format
+  Writes processed data into Excel format  
 
 - src/line_bot_app.py  
-  Provides a messaging interface for command handling and image-based OCR processing through LINE
+  Provides a messaging interface for command handling and image-based OCR processing through LINE  
 
 - examples/simple_ocr_demo.py  
-  Standalone demo script that runs independently of the full system
+  Standalone demo script that runs independently of the full system  
 
 ---
 
 ## Example Usage
 
 ### Standalone OCR Demo
-
-Run the standalone OCR demo:
 
 ```bash
 python examples/simple_ocr_demo.py
