@@ -57,7 +57,6 @@ This design improves reliability and reduces input errors in real-world operatio
 - OpenCV
 - openpyxl
 - LINE Messaging API
-
 ---
 
 ## Project Structure
