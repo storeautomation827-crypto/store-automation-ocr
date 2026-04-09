@@ -28,10 +28,13 @@ Image → OCR → Data Extraction → Excel Output
 
 ## Tech Stack
 - Python
+- Flask
+- Requests
 - Tesseract OCR
 - Pillow
-- openpyxl
 - OpenCV
+- openpyxl
+- LINE Messaging API
 
 ---
 
@@ -49,11 +52,13 @@ The project is organized as follows:
   Handles image preprocessing and OCR execution
 
 - src/parser.py  
-  Extracts structured data (sales, customers, etc.) from OCR results
+  Extracts structured data from OCR results
 
 - src/excel_writer.py  
   Writes processed data into Excel format
 
+- src/line_bot_app.py  
+  Provides a messaging interface for text commands and image-based OCR processing
 ---
 
 ## Notes
