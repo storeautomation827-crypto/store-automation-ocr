@@ -91,7 +91,7 @@ The project is organized as follows:
 
 ### Standalone OCR Demo
 
-Run the standalone demo:
+Run the standalone OCR demo:
 
 ```bash
 python examples/simple_ocr_demo.py
