@@ -82,15 +82,14 @@ The project is organized as follows:
 - src/line_bot_app.py  
   Provides a messaging interface for text commands and image-based OCR processing
 
+- examples/simple_ocr_demo.py  
+  Standalone demo script that runs independently of the full system
+
 ---
 
 ## Example Usage
 
-```python
-from src.ocr import run_ocr
-from src.parser import extract_receipt_data
+Run the standalone demo:
 
-ocr_result = run_ocr("sample/sample_receipt.jpg")
-data = extract_receipt_data(ocr_result)
-
-print(data)
+```bash
+python examples/simple_ocr_demo.py
