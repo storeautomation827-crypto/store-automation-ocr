@@ -57,6 +57,7 @@ This design improves reliability and reduces input errors in real-world operatio
 - OpenCV
 - openpyxl
 - LINE Messaging API
+
 ---
 
 ## Project Structure
@@ -79,7 +80,7 @@ The project is organized as follows:
   Writes processed data into Excel format
 
 - src/line_bot_app.py  
-  Provides a messaging interface for text commands and image-based OCR processing
+  Provides a messaging interface for command handling and image-based OCR processing through LINE
 
 - examples/simple_ocr_demo.py  
   Standalone demo script that runs independently of the full system
@@ -87,6 +88,8 @@ The project is organized as follows:
 ---
 
 ## Example Usage
+
+### Standalone OCR Demo
 
 Run the standalone demo:
 
