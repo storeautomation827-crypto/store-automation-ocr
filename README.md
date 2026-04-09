@@ -21,8 +21,30 @@ To address these issues, I developed an OCR-based automation system.
 
 ---
 
+## Key Features
+
+- OCR-based data extraction from receipt images  
+- Image preprocessing for improved recognition accuracy  
+- Rule-based parsing to handle unstable OCR output  
+- Automatic Excel integration without changing existing workflows  
+- Messaging-based interface using LINE API  
+
+---
+
 ## System Flow
 Image → OCR → Data Extraction → Excel Output
+
+---
+
+## User Interaction Design
+
+The system includes a simple interaction flow that allows users to:
+
+- Review extracted OCR results  
+- Confirm or cancel data before saving  
+- Ensure data accuracy before updating records  
+
+This design improves reliability and reduces input errors in real-world operations.
 
 ---
 
@@ -59,23 +81,16 @@ The project is organized as follows:
 
 - src/line_bot_app.py  
   Provides a messaging interface for text commands and image-based OCR processing
----
-
-## Notes
-This repository contains a simplified version for demonstration purposes.  
-Some implementation details are intentionally omitted.
 
 ---
 
-## Implementation Notes
-For public sharing, this repository includes a simplified version of the OCR, parsing, and Excel export workflow.  
-Production-specific logic and sensitive configurations have been excluded.
+## Example Usage
 
----
+```python
+from src.ocr import run_ocr
+from src.parser import extract_receipt_data
 
-## Project Value
-This project focuses not only on technical implementation, but also on solving real-world operational problems.
+ocr_result = run_ocr("sample/sample_receipt.jpg")
+data = extract_receipt_data(ocr_result)
 
-Instead of replacing existing systems, it integrates with current workflows, making it practical for real use.
-
-Through this project, I learned the importance of designing systems that are both technically effective and operationally practical.
+print(data)
