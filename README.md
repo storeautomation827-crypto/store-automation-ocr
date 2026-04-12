@@ -1,67 +1,76 @@
 # Store Automation OCR
 
 ## Overview
-This project is an OCR-based automation tool designed to improve daily sales management in restaurants.
+Store Automation OCR is a practical automation system designed to streamline daily sales reporting operations in restaurants.
 
-It extracts key information such as sales, number of customers, and payment data from receipt images and automatically inputs them into an existing Excel format.
+The system uses OCR (Optical Character Recognition) to extract key information from receipt or report images and automatically transfers the data into an existing Excel-based workflow.
 
-The system is designed not only for technical implementation, but also for real-world usability in an operational environment.
+This project focuses not only on technical implementation, but also on real-world usability, aiming to reduce manual workload and improve operational efficiency.
 
 ---
 
 ## Background
-In a restaurant where I worked part-time, daily sales were manually transcribed from paper reports into Excel.
 
-This caused:
+In my part-time job at a restaurant, daily sales data was manually transcribed from paper reports into Excel sheets.
 
-- Time-consuming work  
-- Human errors  
-- Complex management of multiple payment methods  
+This process led to several operational challenges:
 
-To address these issues, I developed an OCR-based automation system.
+- Significant time consumption (approximately 15 minutes per day)  
+- Frequent human errors during manual input  
+- Increased complexity due to multiple payment methods (cash, credit card, electronic payment, etc.)
 
----
-
-## Key Features
-
-- OCR-based data extraction from receipt images  
-- Image preprocessing for improved recognition accuracy  
-- Rule-based parsing to handle unstable OCR output  
-- Automatic Excel integration without changing existing workflows  
-- Messaging-based interface using LINE API  
+To solve these issues, I developed an OCR-based automation system that integrates seamlessly with existing workflows.
 
 ---
 
-## System Flow
-Image → OCR → Data Extraction → Excel Output
+## Features
+
+- OCR-based extraction of numerical and textual data from images  
+- Image preprocessing using OpenCV to improve recognition accuracy  
+- Rule-based parsing to handle noisy and inconsistent OCR outputs  
+- Automatic Excel integration without modifying existing formats  
+- Messaging interface via LINE API for intuitive operation  
+- User confirmation flow to ensure data accuracy before saving  
 
 ---
 
-## User Interaction Design
+## System Architecture
 
-The system includes a simple interaction flow that allows users to:
+The system follows a simple pipeline:
 
-- Review extracted OCR results  
-- Confirm or cancel data before saving  
-- Ensure data accuracy before updating records  
+Image → Preprocessing → OCR → Data Parsing → Excel Output
 
-This design improves reliability and reduces input errors in real-world operations.
+This modular structure allows each component to be improved independently.
+
+---
+
+## User Interaction Flow
+
+1. User sends an image via LINE  
+2. OCR processes the image and extracts data  
+3. Extracted data is displayed for confirmation  
+4. User approves or cancels the input  
+5. Approved data is written into Excel  
+
+This design ensures both usability and reliability in real-world environments.
 
 ---
 
 ## Tech Stack
+
 - Python  
-- Flask  
-- Requests  
+- Flask (Web API / Backend)  
+- Requests (API communication)  
 - Tesseract OCR  
-- Pillow  
-- OpenCV  
-- openpyxl  
+- OpenCV (Image preprocessing)  
+- Pillow (Image handling)  
+- openpyxl (Excel integration)  
 - LINE Messaging API  
 
 ---
 
 ## Project Structure
+
 
 The project is organized as follows:
 
@@ -88,9 +97,39 @@ The project is organized as follows:
 
 ---
 
-## Example Usage
 
-### Standalone OCR Demo
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
 
 ```bash
-python examples/simple_ocr_demo.py
+git clone <your-repo-url>
+cd store_automation
+2. Create a virtual environment
+python -m venv .venv
+
+This command creates a folder named .venv that contains an isolated Python environment.
+
+3. Activate the virtual environment
+Windows (PowerShell)
+.\.venv\Scripts\Activate.ps1
+Windows (Command Prompt)
+.venv\Scripts\activate
+macOS / Linux
+source .venv/bin/activate
+
+Once activated, you should see (.venv) at the beginning of your terminal prompt.
+
+4. Upgrade pip (recommended)
+python -m pip install --upgrade pip
+5. Install required packages
+python -m pip install -r requirements.txt
+
+If some packages are missing, install them manually:
+
+python -m pip install requests
+python -m pip install opencv-python
+6. Deactivate the virtual environment
+deactivate
